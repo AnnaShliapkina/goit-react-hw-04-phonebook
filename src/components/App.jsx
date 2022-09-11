@@ -37,7 +37,7 @@ export const App = () => {
       number,
     };
 
-    contacts.some(contact => contact.name.toLowerCase())
+    contacts.some(contact => contact.name.toLowerCase() === name.toLowerCase())
       ? alert(`${name} is already in contacts`)
       : setContacts(state => [...state, contactItem]);
   };
@@ -55,7 +55,7 @@ export const App = () => {
 
   const deleteContact = e => {
     const contactId = e.currentTarget.id;
-    setContacts(state => state.filter(contact => id !== contactId));
+    setContacts(state => state.filter(contact => contact.id !== contactId));
   };
 
   return (
